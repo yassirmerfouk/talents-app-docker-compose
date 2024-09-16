@@ -23,7 +23,7 @@ services:
       - MAIL_USERNAME=merfoukyassir200@gmail.com
       - MAIL_PASSWORD=hpjracbdjxewsmss
       # Allowed origin in production
-      - CORS_ALLOWED_ORIGINS=http://localhost,http://localhost:80,http://20.86.135.191,http://20.86.135.191:80
+      - CORS_ALLOWED_ORIGINS=http://localhost,http://localhost:80,http://20.86.135.191,http://20.86.135.191:80,20.86.135.191,20.86.135.191:80
     networks:
       talents-app-network:
     depends_on:
