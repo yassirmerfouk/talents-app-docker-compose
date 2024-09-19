@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Hôte : 127.0.0.1
--- Généré le : lun. 16 sep. 2024 à 15:05
+-- Généré le : jeu. 19 sep. 2024 à 23:23
 -- Version du serveur : 10.4.27-MariaDB
 -- Version de PHP : 8.2.0
 
@@ -72,7 +72,9 @@ INSERT INTO `applications` (`id`, `approved`, `experiences_score`, `has_admin_me
 (5, b'0', 10, b'0', b'0', 0, b'0', 12, b'0', 2, 9, 2),
 (6, b'1', 40, b'1', b'1', 9, b'0', 52, b'1', 3, 13, 2),
 (7, b'0', 20, b'1', b'0', 0, b'1', 21, b'1', 1, 13, 4),
-(8, b'0', 20, b'1', b'0', 0, b'0', 21, b'0', 1, 13, 5);
+(8, b'0', 20, b'1', b'0', 0, b'0', 21, b'0', 1, 13, 5),
+(9, b'0', 20, b'0', b'0', 3, b'0', 26, b'0', 3, 12, 2),
+(10, b'0', 20, b'0', b'0', 3, b'0', 26, b'0', 3, 8, 2);
 
 -- --------------------------------------------------------
 
@@ -421,7 +423,10 @@ INSERT INTO `confirmation_tokens` (`id`, `confirmed_at`, `created_at`, `expires_
 (21, NULL, '2024-08-07 21:05:42.000000', '2024-08-07 21:20:42.000000', '505097', 22),
 (22, NULL, '2024-08-07 21:06:28.000000', '2024-08-07 21:21:28.000000', '451179', 23),
 (23, NULL, '2024-08-07 21:07:35.000000', '2024-08-07 21:22:35.000000', '258398', 24),
-(24, '2024-08-19 14:06:58.000000', '2024-08-19 14:06:24.000000', '2024-08-19 14:21:24.000000', '146454', 25);
+(24, '2024-08-19 14:06:58.000000', '2024-08-19 14:06:24.000000', '2024-08-19 14:21:24.000000', '146454', 25),
+(25, NULL, '2024-09-17 20:33:17.000000', '2024-09-17 20:48:17.000000', '165696', 26),
+(26, NULL, '2024-09-17 20:38:20.000000', '2024-09-17 20:53:20.000000', '473121', 27),
+(27, '2024-09-17 21:10:04.000000', '2024-09-17 21:09:18.000000', '2024-09-17 21:24:18.000000', '714991', 28);
 
 -- --------------------------------------------------------
 
@@ -656,13 +661,13 @@ CREATE TABLE `languages` (
 INSERT INTO `languages` (`id`, `level`, `title`, `talent_id`) VALUES
 (1, 'C1', 'Arabe', 2),
 (2, 'B2', 'French', 2),
-(3, 'B2', 'English', 2),
 (4, 'C1', 'English', 4),
 (5, 'C1', 'French', 4),
 (6, 'C2', 'Arabic', 4),
 (7, 'C1', 'Arabe', 8),
 (8, 'B2', 'English', 8),
-(9, 'B2', 'French', 8);
+(9, 'B2', 'French', 8),
+(11, 'B2', 'English', 2);
 
 -- --------------------------------------------------------
 
@@ -695,11 +700,13 @@ INSERT INTO `meets` (`id`, `contact_type`, `date`, `first_body`, `meet_type`, `r
 (5, 'VIDEO_CALL', '2024-08-09 15:00:00.000000', 'Dear Yassir Merfouk,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'FullStack Java Angular Developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CLOSED', 'Interview meet with Yassir Merfouk - FullStack Java Angular Developer job offer', 1),
 (6, 'VIDEO_CALL', '2024-08-09 16:00:00.000000', 'https://meet.google.com/ykz-nwze-musDear Ahmed El Haddad,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'FullStack Java Angular Developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link .\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CLOSED', 'Interview meet with Ahmed El Haddad - FullStack Java Angular Developer job offer', 1),
 (7, 'VIDEO_CALL', '2024-08-12 14:00:00.000000', 'Dear Yassir Merfouk,\n\nWe hope this message finds you well.\n\nWe are pleased to inform you that you have been selected by our client to pass an interview for the job \'FullStack Java Angular Developer\'. As part of this process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse Digital Company', 'CLIENT_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', 'Dear Youssef Soulaim,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that we have arranged the interview you requested for the job \'FullStack Java Angular Developer\'. The interview meeting has been scheduled to discuss their qualifications and experience further.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your continued trust in our services. We look forward to facilitating this interview and helping you find the right fit for your needs.\n\nBest regards,\n\n Pulse Digital Company;', 'CLOSED', 'Client Youssef Soulaim meet with talent Yassir Merfouk for job FullStack Java Angular Developer', 1),
-(8, 'PHONE_CALL', '2024-08-26 14:15:00.000000', 'Dear Yassir Merfouk,\n\nI hope this message finds you well.\n\nAs part of our commitment to maintaining a trusted and secure platform, we need to conduct a verification meeting to confirm the details of your profile. This process helps us ensure the accuracy of the information provided and enhance the credibility of our freelancer community.\n\nYou will be receiving a phone call from our administrative team shortly to discuss the verification details. Please ensure that you are available to take the call.\n\nThank you for your cooperation. We look forward to verifying your profile and continuing to support your success on our platform.\n\nBest regards,\n\nPulse digital company', 'VERIFICATION', NULL, NULL, 'CREATED', 'Verification meet with Yassir Merfouk', 1),
-(9, 'VIDEO_CALL', '2024-08-20 14:30:00.000000', 'Dear Yassir Merfouk,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'Java angular developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CREATED', 'Interview meet with Yassir Merfouk - Java angular developer job offer', 1),
-(10, 'VIDEO_CALL', '2024-08-20 14:30:00.000000', 'Dear Ahmed El Haddad,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'Java angular developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CREATED', 'Interview meet with Ahmed El Haddad - Java angular developer job offer', 1),
-(11, 'VIDEO_CALL', '2024-08-20 14:30:00.000000', 'Dear Fatima Benjelloun,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'Java angular developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CREATED', 'Interview meet with Fatima Benjelloun - Java angular developer job offer', 1),
-(12, 'VIDEO_CALL', '2024-08-22 14:33:00.000000', 'Dear Yassir Merfouk,\n\nWe hope this message finds you well.\n\nWe are pleased to inform you that you have been selected by our client to pass an interview for the job \'Java angular developer\'. As part of this process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://workspace.google.com/products/meet/.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse Digital Company', 'CLIENT_INTERVIEW', 'https://workspace.google.com/products/meet/', 'Dear Youssef Soulaim,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that we have arranged the interview you requested for the job \'Java angular developer\'. The interview meeting has been scheduled to discuss their qualifications and experience further.\n\nPlease join the meeting using the following Google Meet link https://workspace.google.com/products/meet/.\n\nThank you for your continued trust in our services. We look forward to facilitating this interview and helping you find the right fit for your needs.\n\nBest regards,\n\n Pulse Digital Company;', 'CREATED', 'Client Youssef Soulaim meet with talent Yassir Merfouk for job Java angular developer', 1);
+(8, 'PHONE_CALL', '2024-08-26 14:15:00.000000', 'Dear Yassir Merfouk,\n\nI hope this message finds you well.\n\nAs part of our commitment to maintaining a trusted and secure platform, we need to conduct a verification meeting to confirm the details of your profile. This process helps us ensure the accuracy of the information provided and enhance the credibility of our freelancer community.\n\nYou will be receiving a phone call from our administrative team shortly to discuss the verification details. Please ensure that you are available to take the call.\n\nThank you for your cooperation. We look forward to verifying your profile and continuing to support your success on our platform.\n\nBest regards,\n\nPulse digital company', 'VERIFICATION', NULL, NULL, 'CLOSED', 'Verification meet with Yassir Merfouk', 1),
+(9, 'VIDEO_CALL', '2024-08-20 14:30:00.000000', 'Dear Yassir Merfouk,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'Java angular developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CLOSED', 'Interview meet with Yassir Merfouk - Java angular developer job offer', 1),
+(10, 'VIDEO_CALL', '2024-08-20 14:30:00.000000', 'Dear Ahmed El Haddad,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'Java angular developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CLOSED', 'Interview meet with Ahmed El Haddad - Java angular developer job offer', 1),
+(11, 'VIDEO_CALL', '2024-08-20 14:30:00.000000', 'Dear Fatima Benjelloun,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that you have been shortlisted for an interview for the job \'Java angular developer\' posted by one of our esteemed clients. As part of our hiring process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse digital company', 'ADMIN_INTERVIEW', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CLOSED', 'Interview meet with Fatima Benjelloun - Java angular developer job offer', 1),
+(12, 'VIDEO_CALL', '2024-08-22 14:33:00.000000', 'Dear Yassir Merfouk,\n\nWe hope this message finds you well.\n\nWe are pleased to inform you that you have been selected by our client to pass an interview for the job \'Java angular developer\'. As part of this process, we would like to invite you to an interview meeting to discuss your qualifications and experience further. This meeting will give us an opportunity to learn more about you and for you to learn more about the exciting opportunities offered by our client.\n\nPlease join the meeting using the following Google Meet link https://workspace.google.com/products/meet/.\n\nThank you for your interest in this opportunity. We look forward to speaking with you and discussing how your skills and experiences align with the needs of our client.\n\nBest regards,\n\nPulse Digital Company', 'CLIENT_INTERVIEW', 'https://workspace.google.com/products/meet/', 'Dear Youssef Soulaim,\n\nI hope this message finds you well.\n\nWe are pleased to inform you that we have arranged the interview you requested for the job \'Java angular developer\'. The interview meeting has been scheduled to discuss their qualifications and experience further.\n\nPlease join the meeting using the following Google Meet link https://workspace.google.com/products/meet/.\n\nThank you for your continued trust in our services. We look forward to facilitating this interview and helping you find the right fit for your needs.\n\nBest regards,\n\n Pulse Digital Company;', 'CLOSED', 'Client Youssef Soulaim meet with talent Yassir Merfouk for job Java angular developer', 1),
+(15, 'VIDEO_CALL', '2024-09-20 14:08:00.000000', 'Dear Youssef Soulaim,\n\nI hope this message finds you well.\n\nAs part of our commitment to maintaining a trusted and secure platform, we need to conduct a verification meeting to confirm the details of your profile. This process helps us ensure the accuracy of the information provided and enhance the credibility of our freelancer community.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your cooperation. We look forward to verifying your profile and continuing to support your success on our platform.\n\nBest regards,\n\nPulse digital company', 'VERIFICATION', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CREATED', 'Verification meet with Youssef Soulaim', 1),
+(16, 'VIDEO_CALL', '2024-09-23 14:10:00.000000', 'Dear Yassir Merfouk,\n\nI hope this message finds you well.\n\nAs part of our commitment to maintaining a trusted and secure platform, we need to conduct a verification meeting to confirm the details of your profile. This process helps us ensure the accuracy of the information provided and enhance the credibility of our freelancer community.\n\nPlease join the meeting using the following Google Meet link https://meet.google.com/ykz-nwze-mus.\n\nThank you for your cooperation. We look forward to verifying your profile and continuing to support your success on our platform.\n\nBest regards,\n\nPulse digital company', 'VERIFICATION', 'https://meet.google.com/ykz-nwze-mus', NULL, 'CREATED', 'Verification meet with Yassir Merfouk', 1);
 
 -- --------------------------------------------------------
 
@@ -730,7 +737,9 @@ INSERT INTO `meets_receivers` (`meet_id`, `receivers_id`) VALUES
 (10, 4),
 (11, 5),
 (12, 3),
-(12, 2);
+(12, 2),
+(15, 3),
+(16, 2);
 
 -- --------------------------------------------------------
 
@@ -795,7 +804,16 @@ INSERT INTO `notifications` (`id`, `body`, `clicked`, `created_at`, `related_mod
 (38, 'You have a interview meet at août 22, 2024, 2:33 p.m.', b'1', '2024-08-19 14:36:01.000000', 12, b'1', 'MEET', 2, NULL),
 (39, 'Client Youssef Soulaim has closed his job, please check the job.', b'0', '2024-08-19 14:37:40.000000', 13, b'1', 'JOB_STATUS_CHANGED', 1, 3),
 (40, 'Your job has been closed by the admin, please check the job.', b'0', '2024-08-23 13:05:02.000000', 13, b'1', 'JOB_STATUS_CHANGED', 3, NULL),
-(41, 'Your job has been closed by the admin, please check the job.', b'0', '2024-08-23 13:06:09.000000', 13, b'1', 'JOB_STATUS_CHANGED', 3, NULL);
+(41, 'Your job has been closed by the admin, please check the job.', b'0', '2024-08-23 13:06:09.000000', 13, b'1', 'JOB_STATUS_CHANGED', 3, NULL),
+(42, 'The Talent Yassir Merfouk sent a verification request to the admins.', b'0', '2024-09-17 21:37:59.000000', 2, b'1', 'TALENT_VERIFICATION', 1, 2),
+(43, 'The Talent Yassir Merfouk sent a verification request to the admins.', b'0', '2024-09-18 13:33:53.000000', 2, b'1', 'TALENT_VERIFICATION', 1, 2),
+(44, 'The Client Youssef Soulaim sent a verification request to the admins.', b'1', '2024-09-18 13:50:28.000000', 3, b'1', 'CLIENT_VERIFICATION', 1, 3),
+(45, 'The Talent Yassir Merfouk sent a verification request to the admins.', b'1', '2024-09-18 13:56:47.000000', 2, b'1', 'TALENT_VERIFICATION', 1, 2),
+(46, 'The Client Youssef Soulaim sent a verification request to the admins.', b'1', '2024-09-18 13:57:07.000000', 3, b'1', 'CLIENT_VERIFICATION', 1, 3),
+(47, 'You have a verification meet at sept. 20, 2024, 2:08 p.m.', b'0', '2024-09-18 14:08:53.000000', 15, b'1', 'MEET', 3, NULL),
+(48, 'You have a verification meet at sept. 23, 2024, 2:10 p.m.', b'1', '2024-09-18 14:09:49.000000', 16, b'1', 'MEET', 2, NULL),
+(49, 'You have been verified by the admins, welcome to our platform.', b'0', '2024-09-18 14:10:25.000000', 2, b'1', 'TALENT_VERIFICATION', 2, NULL),
+(50, 'You have been verified by the admins, welcome to our platform.', b'0', '2024-09-18 14:10:36.000000', 3, b'1', 'CLIENT_VERIFICATION', 3, NULL);
 
 -- --------------------------------------------------------
 
@@ -821,7 +839,10 @@ INSERT INTO `password_tokens` (`id`, `confirmed_at`, `created_at`, `expires_at`,
 (2, '2024-07-31 14:45:43.000000', '2024-07-31 14:45:21.000000', '2024-07-31 15:00:21.000000', '4031e3c4-f98f-4f60-8797-d09e1426840c', 2),
 (3, NULL, '2024-09-06 13:57:40.000000', '2024-09-06 14:12:40.000000', '99c95252-b2cd-4f83-bacd-6ab4e42548b2', 1),
 (4, NULL, '2024-09-06 16:26:40.000000', '2024-09-06 16:41:40.000000', '3e5f8fd5-edd3-4049-b930-5af8e110468a', 1),
-(5, NULL, '2024-09-06 16:41:26.000000', '2024-09-06 16:56:26.000000', 'f842f1e1-fe3e-496c-9cec-6043d652140d', 1);
+(5, NULL, '2024-09-06 16:41:26.000000', '2024-09-06 16:56:26.000000', 'f842f1e1-fe3e-496c-9cec-6043d652140d', 1),
+(6, '2024-09-17 21:21:13.000000', '2024-09-17 21:20:50.000000', '2024-09-17 21:35:50.000000', 'a9489812-48f5-4854-bae8-4adc663a6341', 28),
+(7, '2024-09-17 21:24:24.000000', '2024-09-17 21:24:01.000000', '2024-09-17 21:39:01.000000', 'a7eaf140-aad0-4d00-9656-8f074002414f', 28),
+(8, '2024-09-17 21:27:07.000000', '2024-09-17 21:26:46.000000', '2024-09-17 21:41:46.000000', '4abc08ad-78f3-4147-add8-739a440aa49b', 28);
 
 -- --------------------------------------------------------
 
@@ -984,7 +1005,7 @@ CREATE TABLE `talents` (
 --
 
 INSERT INTO `talents` (`address`, `city`, `date_of_birth`, `summary`, `title`, `id`, `available`) VALUES
-('Suite 286 56726 Curtis Orchard, East Derick, ND 63191', 'Safi', '1999-11-11', 'As a software engineer, I, Yassir Merfouk, have a strong foundation in computer science and engineering, with proficiency in languages like Java, Python, and C++. With experience in developing mobile apps, web applications, I\'ve honed my skills in problem-solving and attention to detail. My passion for technology and teamwork makes me a valuable asset to any organization, where I can leverage my technical expertise and communication skills to deliver high-quality results.', 'Software Engineer', 2, b'1'),
+('203 BLOC \" RIYAD SAFI', 'Safi', '1999-11-11', 'As a software engineer, I, Yassir Merfouk, have a strong foundation in computer science and engineering, with proficiency in languages like Java, Python, and C++. With experience in developing mobile apps, web applications, I\'ve honed my skills in problem-solving and attention to detail. My passion for technology and teamwork makes me a valuable asset to any organization, where I can leverage my technical expertise and communication skills to deliver high-quality results.', 'Software Engineer', 2, b'1'),
 ('Suite 286 56726 Curtis Orchard, East Derick, ND 63191', 'Casablanca', '1990-08-18', 'As a software engineer, I, Yassir Merfouk, have a strong foundation in computer science and engineering, with proficiency in languages like Java, Python, and C++. With experience in developing mobile apps, web applications;', 'Software Engineer', 4, b'1'),
 (NULL, 'Rabat', '1990-08-18', NULL, 'IT Project Manager', 5, b'1'),
 (NULL, 'Marrakech', '1998-08-05', NULL, 'Systems Analyst', 6, b'1'),
@@ -999,7 +1020,10 @@ INSERT INTO `talents` (`address`, `city`, `date_of_birth`, `summary`, `title`, `
 (NULL, 'Rabat', '1997-11-11', NULL, 'Mobile Developer', 15, b'1'),
 (NULL, 'Marrakech', '1997-11-15', NULL, 'UI/UX Designer', 16, b'1'),
 (NULL, 'Casablanca', '1989-11-15', NULL, 'Cloud Architect', 17, b'1'),
-(NULL, 'Safi', '1999-11-11', NULL, 'Software Engineer', 25, b'0');
+(NULL, 'Safi', '1999-11-11', NULL, 'Software Engineer', 25, b'0'),
+(NULL, 'Casablanca', '1999-11-11', NULL, 'Software engineer', 26, b'0'),
+(NULL, 'Safi', '1999-11-11', NULL, 'Software engineer', 27, b'0'),
+(NULL, 'Safi', '1999-11-11', NULL, 'Software Engineer', 28, b'0');
 
 -- --------------------------------------------------------
 
@@ -1025,6 +1049,8 @@ INSERT INTO `talents_skills` (`talent_id`, `skills_id`) VALUES
 (2, 7),
 (2, 8),
 (2, 9),
+(2, 10),
+(2, 11),
 (2, 12),
 (2, 13),
 (4, 1),
@@ -1090,7 +1116,7 @@ INSERT INTO `users` (`user_type`, `id`, `created_at`, `email`, `enabled`, `first
 ('TALENT', 7, '2024-08-07 15:08:42.000000', 'talent5@mohmal.in', b'1', 'Amina', NULL, 'Oukili', b'0', '$2a$10$q7KSOOerp4HjvyX8JOjzE.Kj2z5WhwNRSSwM4mKvyx1VQ6yNXfnK.', '0634567890', 'VERIFIED'),
 ('TALENT', 8, '2024-08-07 15:11:41.000000', 'talent6@mohmal.in', b'1', 'Yassir', 'https://res.cloudinary.com/djcdpsyie/image/upload/bkb6bs0a67kelybbepkq', 'Merfouk', b'0', '$2a$10$DHC1nuM6XRuDq5hIxGlPjevAYk75r2QmEJIZlosQCGl3JuBqzF92i', '0642848255', 'VERIFIED'),
 ('TALENT', 9, '2024-08-07 15:14:18.000000', 'talent7@mohmal.in', b'1', 'Youssef', NULL, 'Amrani', b'0', '$2a$10$GlCIpgojiNeSa93N2UeO.uPbA8V9npCvuzrdMwitKcJuynd4IST1u', '0656789012', 'NOT_VERIFIED'),
-('TALENT', 10, '2024-08-07 15:15:13.000000', 'talent8@mohmal.in', b'1', 'Salma', NULL, 'Bouzid', b'0', '$2a$10$Hd61S1Hb0b3GLjTD0ljWUuC30RLYajVfam/tHa/kRQd5d8LakcQIW', '0656789012', 'NOT_VERIFIED'),
+('TALENT', 10, '2024-08-07 15:15:13.000000', 'talent8@mohmal.in', b'1', 'Salma', NULL, 'Bouzid', b'1', '$2a$10$Hd61S1Hb0b3GLjTD0ljWUuC30RLYajVfam/tHa/kRQd5d8LakcQIW', '0656789012', 'BANNED'),
 ('TALENT', 11, '2024-08-07 15:16:19.000000', 'talent9@mohmal.in', b'1', 'Hicham', NULL, 'Belkacem', b'0', '$2a$10$YAcSbMdYwxSdQHkAZX4CyOOsDs.lrtCKIqexHFth5RoCsX0hsZwPK', '0656789012', 'NOT_VERIFIED'),
 ('TALENT', 12, '2024-08-07 15:17:35.000000', 'talent10@mohmal.in', b'1', 'Leila', NULL, 'Chaouki', b'0', '$2a$10$ebLlBB/PLgGyztLrPjo99.ULjWsUroYrdAFFlNbcbZNipBEQIzC5G', '0689012345', 'NOT_VERIFIED'),
 ('TALENT', 13, '2024-08-07 15:19:36.000000', 'talent11@mohmal.in', b'1', 'Yassir', NULL, 'Merfouk', b'0', '$2a$10$P.HJPym0WmnIqv.yuozMdOU/B3Ohzf5hGc8q9RTjDDPXQYD.dPD8q', '0642848255', 'NOT_VERIFIED'),
@@ -1105,7 +1131,10 @@ INSERT INTO `users` (`user_type`, `id`, `created_at`, `email`, `enabled`, `first
 ('CLIENT', 22, '2024-08-07 21:05:42.000000', 'client6@mohmal.in', b'1', 'Lucas', NULL, 'Martin', b'0', '$2a$10$Vka3ctXjImTHkZjCi47GI.L4phNS36J1okrbV.QlMMAphXx/6pp9C', '+33 6 23 45 67 89', 'NOT_VERIFIED'),
 ('CLIENT', 23, '2024-08-07 21:06:28.000000', 'client7@mohmal.in', b'1', 'Clara', NULL, 'Dubois', b'0', '$2a$10$Xy7T.4jgUfC3HDN.P5E86uA3Uz9GQpZcLgmmzteUlFkAmPB7ak/Si', '+33 6 34 56 78 90', 'NOT_VERIFIED'),
 ('CLIENT', 24, '2024-08-07 21:07:35.000000', 'client8@mohmal.in', b'1', 'Sophie', NULL, 'Fischer', b'0', '$2a$10$FC7/ucy5hHF0dNg.GCYYSeEB5e66vTcG9oNbKHJ3cHQZnqLfdFp2i', '+41 79 345 67 89', 'NOT_VERIFIED'),
-('TALENT', 25, '2024-08-19 14:06:24.000000', 'newtalent@mohmal.in', b'1', 'Yassir', NULL, 'Merfouk', b'0', '$2a$10$TvBFPdliMOaWQezc1HhFHeLmau69vx3vr5n3TjRRuGzrKHeCXL2f.', '0642848255', 'NOT_VERIFIED');
+('TALENT', 25, '2024-08-19 14:06:24.000000', 'newtalent@mohmal.in', b'1', 'Yassir', NULL, 'Merfouk', b'0', '$2a$10$TvBFPdliMOaWQezc1HhFHeLmau69vx3vr5n3TjRRuGzrKHeCXL2f.', '0642848255', 'NOT_VERIFIED'),
+('TALENT', 26, '2024-09-17 20:33:17.000000', 'new-test-1@mohmal.in', b'0', 'Yassir', NULL, 'Merfouk', b'0', '$2a$10$NEAsrbsDvwdBMW5YG5jsA..O5bMthwtzSjw6kKSTsM06wAQ/jZ6TO', '0642848255', 'NOT_VERIFIED'),
+('TALENT', 27, '2024-09-17 20:38:20.000000', 'yassirmerfouk@mohmal.in', b'0', 'Yassir', NULL, 'Merfouk', b'0', '$2a$10$hmOTYp0/AOrP3I3KI.UJhOCIvbf24aT2OAhfmfkdlPVTuBh6vd0bW', '0642848255', 'NOT_VERIFIED'),
+('TALENT', 28, '2024-09-17 21:09:18.000000', 'yassirmerfouk1@mohmal.in', b'1', 'Yassir', NULL, 'Merfouk', b'0', '$2a$10$DYHAC.ELZNeyIfGfefTdzOE6pEEoq2tAMgLg5xTUXLYE72rPrVye.', '0642848255', 'NOT_VERIFIED');
 
 -- --------------------------------------------------------
 
@@ -1147,7 +1176,10 @@ INSERT INTO `users_roles` (`user_id`, `roles_id`) VALUES
 (22, 3),
 (23, 3),
 (24, 3),
-(25, 4);
+(25, 4),
+(26, 4),
+(27, 4),
+(28, 4);
 
 --
 -- Index pour les tables déchargées
@@ -1414,7 +1446,7 @@ ALTER TABLE `users_roles`
 -- AUTO_INCREMENT pour la table `applications`
 --
 ALTER TABLE `applications`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT pour la table `certifications`
@@ -1432,7 +1464,7 @@ ALTER TABLE `client_contracts`
 -- AUTO_INCREMENT pour la table `confirmation_tokens`
 --
 ALTER TABLE `confirmation_tokens`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=25;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 
 --
 -- AUTO_INCREMENT pour la table `contracts`
@@ -1468,25 +1500,25 @@ ALTER TABLE `job_interviews`
 -- AUTO_INCREMENT pour la table `languages`
 --
 ALTER TABLE `languages`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT pour la table `meets`
 --
 ALTER TABLE `meets`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT pour la table `notifications`
 --
 ALTER TABLE `notifications`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=42;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 
 --
 -- AUTO_INCREMENT pour la table `password_tokens`
 --
 ALTER TABLE `password_tokens`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT pour la table `projects`
@@ -1528,7 +1560,7 @@ ALTER TABLE `talent_contracts`
 -- AUTO_INCREMENT pour la table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
+  MODIFY `id` bigint(20) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=29;
 
 --
 -- Contraintes pour les tables déchargées
